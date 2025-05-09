@@ -1,0 +1,15 @@
+<div style="padding:20px;">
+  <h1>Produtos</h1>
+
+  <input placeholder="Nome" [(ngModel)]="name">
+  <input placeholder="Descrição" [(ngModel)]="description">
+  <input type="number" placeholder="Preço" [(ngModel)]="price">
+  <button (click)="createProduct()">Adicionar</button>
+
+  <ul>
+    <li *ngFor="let product of products">
+      {{ product.name }} - {{ product.description }} - R$ {{ product.price }}
+      <button (click)="deleteProduct(product.id)">Excluir</button>
+    </li>
+  </ul>
+</div>
